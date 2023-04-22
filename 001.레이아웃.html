@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        padding: 50px;
+      }
+      .head {
+        text-align: center;
+      }
+      .content {
+        padding: 100px 550px;
+      }
+      article {
+        width: 100%;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+      }
+      textarea {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="head">
+        <h1>MEMO</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+          <br />
+          consequatur, porro cum ut nostrum provident animi molestias. Non illo
+          itaque nam! <br />Delectus explicabo neque sapiente voluptatem optio!
+          Enim, fugiat a.
+        </p>
+      </section>
+
+      <section class="content">
+        <article>
+          <input type="text" placeholder="제목을 입력하세요" id="memo-title" />
+          <textarea
+            name=""
+            id="memo-content"
+            cols="30"
+            rows="10"
+            placeholder="내용을 입력하세요"
+          ></textarea>
+          <button id="memo-btn">등록</button>
+        </article>
+      </section>
+    </main>
+    <script>
+      const memoTitle = document.getElementById('memo-title');
+      const memoContent = document.getElementById('memo-content');
+      const memoBtn = document.getElementById('memo-btn');
+
+      memoBtn.addEventListener('click', function () {
+        console.log(memoTitle.value);
+        console.log(memoContent.value);
+      });
+
+      const memo2 = {};
+      memo2['one'] = '메모1';
+      memo2['two'] = '메모2';
+      localStorage.setItem('메모2', JSON.stringify(memo2));
+
+      console.log(localStorage.getItem('메모2'));
+      console.log(JSON.parse(localStorage.getItem('메모2')));
+    </script>
+  </body>
+</html>
